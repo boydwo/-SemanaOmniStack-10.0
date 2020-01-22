@@ -1,6 +1,7 @@
 import React from "react";
 import "./global.css";
 import "./App.css";
+import "./Main.css";
 import "./Sidebar.css";
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
                 alt='Marcos Tulio'
               />
               <div className='user-info'>
-                <strong>Diego Fernandes</strong>
+                <strong>Marcos Túlio</strong>
                 <span> ReactJs, Reat Native, Node.js</span>
               </div>
             </header>
@@ -61,7 +62,7 @@ function App() {
                 alt='Marcos Tulio'
               />
               <div className='user-info'>
-                <strong>Diego Fernandes</strong>
+                <strong>Marcos Túlio</strong>
                 <span> ReactJs, Reat Native, Node.js</span>
               </div>
             </header>
@@ -79,7 +80,7 @@ function App() {
                 alt='Marcos Tulio'
               />
               <div className='user-info'>
-                <strong>Diego Fernandes</strong>
+                <strong>Marcos Túlio</strong>
                 <span> ReactJs, Reat Native, Node.js</span>
               </div>
             </header>
