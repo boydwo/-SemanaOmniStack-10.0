@@ -34,7 +34,63 @@ function App() {
           <button>Salvar</button>
         </form>
       </aside>
-      <main></main>
+      <main>
+        <ul>
+          <li className='dev-item'>
+            <header>
+              <img
+                src='https://avatars3.githubusercontent.com/u/40392208?s=460&v=4'
+                alt='Marcos Tulio'
+              />
+              <div className='user-info'>
+                <strong>Diego Fernandes</strong>
+                <span> ReactJs, Reat Native, Node.js</span>
+              </div>
+            </header>
+            <p>
+              A young technology lover with ambitious dreams. FullStack
+              developer.
+            </p>
+            <a href='https://github.com/boydwo'>acessar perfil no github</a>
+          </li>
+
+          <li className='dev-item'>
+            <header>
+              <img
+                src='https://avatars3.githubusercontent.com/u/40392208?s=460&v=4'
+                alt='Marcos Tulio'
+              />
+              <div className='user-info'>
+                <strong>Diego Fernandes</strong>
+                <span> ReactJs, Reat Native, Node.js</span>
+              </div>
+            </header>
+            <p>
+              A young technology lover with ambitious dreams. FullStack
+              developer.
+            </p>
+            <a href='https://github.com/boydwo'>acessar perfil no github</a>
+          </li>
+
+          <li className='dev-item'>
+            <header>
+              <img
+                src='https://avatars3.githubusercontent.com/u/40392208?s=460&v=4'
+                alt='Marcos Tulio'
+              />
+              <div className='user-info'>
+                <strong>Diego Fernandes</strong>
+                <span> ReactJs, Reat Native, Node.js</span>
+              </div>
+            </header>
+            <p>
+              A young technology lover with ambitious dreams. FullStack
+              developer.
+            </p>
+            <a href='https://github.com/boydwo'>acessar perfil no github</a>
+          </li>
+        </ul>
+      </main>
     </div>
   );
 }
