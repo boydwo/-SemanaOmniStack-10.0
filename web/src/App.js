@@ -3,7 +3,7 @@ import "./global.css";
 import "./App.css";
 import "./Main.css";
 import "./Sidebar.css";
-
+import api from "./services/api";
 function App() {
   const [github_username, setGithub_username] = useState("");
   const [techs, setTechs] = useState("");
@@ -30,6 +30,14 @@ function App() {
   async function handleAddDev(e) {
     //previnindo o comportamento do html
     e.preventDefault();
+
+    const response = await api.post("/devs", {
+      github_username,
+      techs,
+      latitude,
+      longitude
+    });
+    console.log(response.data);
   }
 
   return (
