@@ -27,7 +27,10 @@ function App() {
     );
   }, []);
 
-  async function handleAddDev(e) {}
+  async function handleAddDev(e) {
+    //previnindo o comportamento do html
+    e.preventDefault();
+  }
 
   return (
     <div id='app'>
