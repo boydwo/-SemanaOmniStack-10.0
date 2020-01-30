@@ -37,6 +37,7 @@ function App() {
       latitude,
       longitude
     });
+    console.log(response.data);
   }
 
   return (
