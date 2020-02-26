@@ -5,6 +5,7 @@ import "./Main.css";
 import "./Sidebar.css";
 import api from "./services/api";
 function App() {
+  const [devs, setDevs] = useState([]);
   const [github_username, setGithub_username] = useState("");
   const [techs, setTechs] = useState("");
   const [latitude, setLatitude] = useState("");
@@ -26,7 +27,14 @@ function App() {
       }
     );
   }, []);
+  useEffect(() => {
+    async function loadDevs() {
+      const response = await api.get("/devs");
+      setDevs(response.data);
+    }
 
+    loadDevs();
+  }, []);
   async function handleAddDev(e) {
     //previnindo o comportamento do html
     e.preventDefault();
@@ -38,6 +46,9 @@ function App() {
       longitude
     });
     console.log(response.data);
+
+    setGithub_username("");
+    setTechs("");
   }
 
   return (
@@ -96,59 +107,21 @@ function App() {
       </aside>
       <main>
         <ul>
-          <li className='dev-item'>
-            <header>
-              <img
-                src='https://avatars3.githubusercontent.com/u/40392208?s=460&v=4'
-                alt='Marcos Tulio'
-              />
-              <div className='user-info'>
-                <strong>Marcos Túlio</strong>
-                <span> ReactJs, Reat Native, Node.js</span>
-              </div>
-            </header>
-            <p>
-              A young technology lover with ambitious dreams. FullStack
-              developer.
-            </p>
-            <a href='https://github.com/boydwo'>acessar perfil no github</a>
-          </li>
-
-          <li className='dev-item'>
-            <header>
-              <img
-                src='https://avatars3.githubusercontent.com/u/40392208?s=460&v=4'
-                alt='Marcos Tulio'
-              />
-              <div className='user-info'>
-                <strong>Marcos Túlio</strong>
-                <span> ReactJs, Reat Native, Node.js</span>
-              </div>
-            </header>
-            <p>
-              A young technology lover with ambitious dreams. FullStack
-              developer.
-            </p>
-            <a href='https://github.com/boydwo'>acessar perfil no github</a>
-          </li>
-
-          <li className='dev-item'>
-            <header>
-              <img
-                src='https://avatars3.githubusercontent.com/u/40392208?s=460&v=4'
-                alt='Marcos Tulio'
-              />
-              <div className='user-info'>
-                <strong>Marcos Túlio</strong>
-                <span> ReactJs, Reat Native, Node.js</span>
-              </div>
-            </header>
-            <p>
-              A young technology lover with ambitious dreams. FullStack
-              developer.
-            </p>
-            <a href='https://github.com/boydwo'>acessar perfil no github</a>
-          </li>
+          {devs.map(dev => (
+            <li className='dev-item'>
+              <header>
+                <img src={dev.avatar_url} alt={dev.name} />
+                <div className='user-info'>
+                  <strong>{dev.name}</strong>
+                  <span>{dev.techs.join(", ")}</span>
+                </div>
+              </header>
+              <p>{dev.bio}</p>
+              <a href={`https://github.com;/${dev.github_username}`}>
+                Acessar perfil no github
+              </a>
+            </li>
+          ))}
         </ul>
       </main>
     </div>
